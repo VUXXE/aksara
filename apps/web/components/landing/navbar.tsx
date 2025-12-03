@@ -11,15 +11,15 @@ export const Navbar = async () => {
     const user = await getAuthUserDetails();
 
     return (
-        <header className="fixed top-0 left-0 right-0 z-[100] p-4 flex items-center justify-between backdrop-blur-md bg-background/50 border-b border-white/10">
+        <header className="fixed top-0 left-0 right-0 z-[100] px-4 py-2 flex items-center justify-between backdrop-blur-md bg-background/50 border-b border-white/10">
             <aside className="flex items-center gap-2">
                 <Image
                     src="/assets/plura-logo.svg"
-                    width={40}
-                    height={40}
+                    width={30}
+                    height={30}
                     alt="Aksara Logo"
                 />
-                <span className="text-xl font-bold">Aksara.</span>
+                <span className="text-lg font-bold">Aksara.</span>
             </aside>
             <nav className="hidden md:block absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
                 <ul className="flex items-center gap-8">
