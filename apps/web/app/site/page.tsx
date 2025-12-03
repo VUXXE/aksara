@@ -4,7 +4,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 import MaxWidthWrapper from "@/components/ui/max-width-wrapper";
-import { HeroContainerScroll } from "@/components/landing/hero-container-scroll";
+import { HeroSection } from "@/components/landing/hero-section";
 import { BackgroundBeams } from "@/components/landing/background-beams";
 import HoverPriceCard from "@/components/landing/hover-price-card";
 import { InfiniteMovingCards } from "@/components/landing/infinite-moving-cards";
@@ -16,10 +16,8 @@ const HomePage: React.FC = () => {
     <div className="h-full bg-background">
       <Navbar />
       <section className="w-full relative">
-        <MaxWidthWrapper>
-          <HeroContainerScroll />
-        </MaxWidthWrapper>
-        <BackgroundBeams />
+        <HeroSection />
+        <BackgroundBeams className="opacity-40" />
       </section>
       <section>
         <MaxWidthWrapper className="flex items-center flex-col gap-4 md:mt-20">
