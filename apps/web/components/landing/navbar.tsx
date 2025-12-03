@@ -11,7 +11,7 @@ export function Navbar() {
             initial={{ y: -100, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 glass border-b border-white/10"
+            className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4 bg-background/50 backdrop-blur-md border-b border-white/10"
         >
             <div className="flex items-center gap-2">
                 <div className="size-8 rounded-lg bg-primary/20 flex items-center justify-center border border-primary/50">
@@ -29,10 +29,10 @@ export function Navbar() {
 
             <div className="flex items-center gap-4">
                 <ModeToggle />
-                <Link href="/login" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden sm:block">
+                <Link href="/agency/sign-in" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors hidden sm:block">
                     Sign In
                 </Link>
-                <Link href="/signup">
+                <Link href="/agency/sign-up">
                     <Button className="rounded-full px-6">Get Started</Button>
                 </Link>
             </div>

@@ -1,113 +1,94 @@
 "use client";
 
+import React from "react";
+import Link from "next/link";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Zap, BarChart3, Globe } from "lucide-react";
-import { Spotlight } from "@/components/ui/spotlight";
+import { Badge } from "@/components/ui/badge";
 
-export function Hero() {
+export const Hero = () => {
     return (
-        <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20 antialiased">
-            <Spotlight
-                className="-top-40 left-0 md:left-60 md:-top-20"
-                fill="white"
-            />
+        <section className="relative flex flex-col items-center justify-center min-h-screen pt-24 pb-12 overflow-hidden text-center md:pt-32">
+            {/* Background Effects */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-primary/20 rounded-full blur-[120px] opacity-50 pointer-events-none" />
+            <div className="absolute bottom-0 right-0 w-[800px] h-[600px] bg-secondary/10 rounded-full blur-[100px] opacity-30 pointer-events-none" />
 
-            <div className="container mx-auto px-4 relative z-10 text-center">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 text-sm font-medium text-white mb-8 backdrop-blur-sm"
-                >
-                    <Sparkles className="size-4 text-purple-400" />
-                    <span>The All-in-One AI Growth Platform</span>
-                </motion.div>
-
-                <motion.h1
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-white drop-shadow-2xl"
-                >
-                    Build. Market. <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Scale.</span>
-                </motion.h1>
-
-                <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                    className="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto mb-10 drop-shadow-md"
-                >
-                    Aksara unifies CRM, Marketing, Website Building, Sales, and Support into a single, AI-powered ecosystem. Stop juggling tools and start growing.
-                </motion.p>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.5 }}
-                    className="flex flex-col sm:flex-row items-center justify-center gap-4"
-                >
-                    <Button size="lg" className="h-12 px-8 rounded-full text-base bg-white text-black hover:bg-zinc-200">
-                        Start Free Trial <ArrowRight className="ml-2 size-4" />
-                    </Button>
-                    <Button size="lg" variant="outline" className="h-12 px-8 rounded-full text-base border-white/20 text-white hover:bg-white/10 bg-black/50 backdrop-blur-md">
-                        View Demo
-                    </Button>
-                </motion.div>
-
-                {/* Floating Icons / 3D Elements Mockup */}
-                <div className="mt-20 relative w-full max-w-5xl mx-auto h-[400px] md:h-[500px]">
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, delay: 0.6 }}
-                        className="absolute inset-0 bg-black/60 rounded-t-3xl border-t border-l border-r border-white/10 backdrop-blur-md p-6"
+            <div className="container relative z-10 px-4 mx-auto space-y-8">
+                {/* Badge */}
+                <div className="animate-fade-in-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
+                    <Badge
+                        variant="outline"
+                        className="px-4 py-1.5 text-sm font-medium border-primary/20 bg-primary/10 text-primary rounded-full backdrop-blur-sm"
                     >
-                        <div className="grid grid-cols-3 gap-6 h-full">
-                            {/* Mock Dashboard Cards */}
-                            <div className="col-span-2 space-y-6">
-                                <div className="h-1/2 rounded-xl bg-zinc-900/80 border border-white/10 p-6 flex flex-col justify-between">
-                                    <div className="flex items-center justify-between">
-                                        <div className="flex items-center gap-3">
-                                            <div className="p-2 rounded-lg bg-blue-500/20 text-blue-400"><BarChart3 size={20} /></div>
-                                            <span className="font-medium text-white">Revenue Growth</span>
-                                        </div>
-                                        <span className="text-green-400 text-sm font-medium">+12.5%</span>
-                                    </div>
-                                    <div className="h-24 flex items-end gap-2">
-                                        {[40, 60, 45, 70, 55, 80, 65, 85].map((h, i) => (
-                                            <div key={i} className="flex-1 bg-blue-500/50 rounded-t-sm hover:bg-blue-500/70 transition-colors" style={{ height: `${h}%` }} />
-                                        ))}
-                                    </div>
-                                </div>
-                                <div className="h-1/3 rounded-xl bg-zinc-900/80 border border-white/10 p-6 flex items-center gap-4">
-                                    <div className="p-3 rounded-full bg-purple-500/20 text-purple-400"><Zap size={24} /></div>
-                                    <div>
-                                        <div className="text-sm text-zinc-400">AI Workflow</div>
-                                        <div className="font-medium text-white">Lead Scoring Automation Active</div>
-                                    </div>
-                                </div>
+                        <Sparkles className="w-3.5 h-3.5 mr-2 fill-primary" />
+                        The Future of Agency Management
+                    </Badge>
+                </div>
+
+                {/* Headline */}
+                <h1 className="max-w-4xl mx-auto text-5xl font-bold tracking-tight md:text-7xl lg:text-8xl animate-fade-in-up opacity-0 [animation-delay:400ms] [animation-fill-mode:forwards]">
+                    <span className="block text-foreground">Build.</span>
+                    <span className="block bg-gradient-to-r from-primary via-purple-500 to-secondary bg-clip-text text-transparent">
+                        Market.
+                    </span>
+                    <span className="block text-foreground">Scale.</span>
+                </h1>
+
+                {/* Subtitle */}
+                <p className="max-w-2xl mx-auto text-lg text-muted-foreground md:text-xl animate-fade-in-up opacity-0 [animation-delay:600ms] [animation-fill-mode:forwards]">
+                    The all-in-one platform designed to help agencies streamline operations,
+                    manage clients, and accelerate growth with AI-powered tools.
+                </p>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col items-center justify-center gap-4 sm:flex-row animate-fade-in-up opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
+                    <Button
+                        asChild
+                        size="lg"
+                        className="h-12 px-8 text-base rounded-full shadow-lg shadow-primary/25 hover:shadow-primary/40 transition-all duration-300"
+                    >
+                        <Link href="/agency/sign-up">
+                            Get Started Free
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                        </Link>
+                    </Button>
+                    <Button
+                        asChild
+                        variant="outline"
+                        size="lg"
+                        className="h-12 px-8 text-base rounded-full border-border/50 bg-background/50 backdrop-blur-sm hover:bg-accent/50 transition-all duration-300"
+                    >
+                        <Link href="#features">Learn More</Link>
+                    </Button>
+                </div>
+
+                {/* Dashboard Preview (Placeholder for now, or use an image if available) */}
+                <div className="relative mt-16 mx-auto max-w-6xl animate-fade-in-up opacity-0 [animation-delay:1000ms] [animation-fill-mode:forwards]">
+                    <div className="relative rounded-xl border border-border/50 bg-card/50 backdrop-blur-xl shadow-2xl overflow-hidden aspect-video group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5" />
+
+                        {/* Mock UI Elements */}
+                        <div className="absolute top-0 left-0 right-0 h-12 border-b border-border/50 bg-background/50 flex items-center px-4 gap-2">
+                            <div className="flex gap-1.5">
+                                <div className="w-3 h-3 rounded-full bg-red-500/50" />
+                                <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
+                                <div className="w-3 h-3 rounded-full bg-green-500/50" />
                             </div>
-                            <div className="col-span-1 space-y-6">
-                                <div className="h-full rounded-xl bg-zinc-900/80 border border-white/10 p-6 relative overflow-hidden">
-                                    <div className="absolute top-0 right-0 p-4 opacity-20"><Globe size={100} /></div>
-                                    <div className="relative z-10">
-                                        <div className="text-sm text-zinc-400 mb-2">Website Builder</div>
-                                        <div className="font-medium text-xl mb-4 text-white">Live Preview</div>
-                                        <div className="space-y-3">
-                                            <div className="h-2 w-3/4 bg-zinc-700 rounded-full" />
-                                            <div className="h-2 w-1/2 bg-zinc-700 rounded-full" />
-                                            <div className="h-24 w-full bg-zinc-800 rounded-lg mt-4 border border-zinc-700" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div className="ml-4 w-64 h-6 rounded-md bg-muted/50" />
                         </div>
-                    </motion.div>
+
+                        <div className="absolute inset-0 top-12 flex items-center justify-center text-muted-foreground/20 font-bold text-4xl uppercase tracking-widest select-none">
+                            Dashboard Preview
+                        </div>
+
+                        {/* Optional: Use an actual image if one exists */}
+                        {/* <Image src="/assets/preview.png" alt="Dashboard" fill className="object-cover opacity-90" /> */}
+                    </div>
+
+                    {/* Glow behind the dashboard */}
+                    <div className="absolute -inset-4 bg-gradient-to-r from-primary to-secondary rounded-xl blur-2xl opacity-20 -z-10 group-hover:opacity-30 transition-opacity duration-500" />
                 </div>
             </div>
         </section>
     );
-}
+};
