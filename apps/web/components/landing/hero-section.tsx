@@ -47,8 +47,7 @@ export const HeroSection = () => {
                     transition={{ duration: 0.5, delay: 0.2 }}
                     className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto mb-10 leading-relaxed"
                 >
-                    Aksara unifies CRM, Marketing, Website Building, Sales, and Support into a
-                    single, AI-powered ecosystem. Stop juggling tools and start growing.
+                    Your all-in-one agency operating system. Build stunning websites, manage client relationships, and automate your growth with AI-powered tools.
                 </motion.p>
 
                 {/* Buttons */}
